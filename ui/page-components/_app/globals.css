@@ -12,5 +12,6 @@
     html {
       @apply scroll-smooth;
       font-family: 'JetBrains Mono', monospace;
+      background: black;
     }
   }
