@@ -6,11 +6,13 @@ import Link from "next/link";
 
 function PageHome() {
   return (
-    <div>
+    <div className="flex flex-col">
      {/* <Navebar/> */}
      <Hero/>
      <AboutMe/>
-      <Link href='#' className="flex justify-center text-sm text-white bg-black py-4"> Go to homepage</Link>
+     <div>
+      <Link href='#' className="flex justify-center text-sm text-white sm:mt-20 bg-black py-4"> Go to homepage</Link>
+     </div>
     </div>
   );
 }
