@@ -1,48 +1,50 @@
 "use client";
 import React from "react";
-import Typed from "react-typed";
-import Link from "next/link";
+import { styles } from "@/ui/styles";
+import ComputersCanvas from "../canvas/Computer";
+import {motion} from 'framer-motion'
+
 
 const Hero = () => {
   return (
-    <section
-      id="#"
-      className="  text-[#09f755]
-     leading-10
-     justify-center
-     h-screen
-     sm:mt-[-32px] sm:bg-[url('https://portfoliorecreationshubhamthedev.netlify.app/static/media/home-bg.59b92434.svg')] bg-no-repeat bg-right"
-    >
-      <div
-        className="
-        flex
-        flex-col
-        sm:p-60 
-        text-center
-        sm:text-left"
+    <section className="relative w-full h-screen mx-auto">
+    <div
+        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
-        <h1 className=" text-white mt-10 font-extrabold sm:text-7xl text-6xl text-transparent bg-clip-text bg-gradient-to-br from-white to-green-600 ">
-          Manish
-        </h1>
-        Front-end Developer
-        <br />
-        <Typed
-          strings={["JavaScript", "NextJS", "ReactJS", "Tailwind", "Kotlin"]}
-          // className="absolute"
-          typeSpeed={100}
-          backSpeed={100}
-          loop
-        />
+        <div className='flex flex-col justify-center items-center mt-5'>
+          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
+          <div className='w-1 sm:h-80 h-40 violet-gradient' />
+        </div>
 
-          <Link
-            href="#work"
-            className="flex text-black text-sm justify-center items-center mx-auto sm:mx-0  bg-[#09f755] w-28 h-10 p-2 rounded-3xl mt-14 hover:bg-black hover:border hover:border-white hover:text-white cursor-pointer"
-          >
-            About me
-          </Link>
-
+        <div>
+          <h1 className={`${styles.heroHeadText} text-white`}>
+            Hi, I'm <span className='text-[#915EFF]'>Manish</span>
+          </h1>
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            I am a web developer who develops 2D <br className='sm:block hidden' /> and 3D visuals, user 
+            interfaces and web applications
+          </p>
+        </div>
       </div>
-      {/* </div> */}
+      <ComputersCanvas/>
+
+<div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
+  <a href='#about'>
+    <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
+      <motion.div
+        animate={{
+          y: [0, 24, 0],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+        className='w-3 h-3 rounded-full bg-secondary mb-1'
+      />
+    </div>
+  </a>
+</div>
     </section>
   );
 };
